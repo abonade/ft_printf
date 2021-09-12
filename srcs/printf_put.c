@@ -6,7 +6,7 @@
 /*   By: aileen <aileen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 16:17:09 by aileen            #+#    #+#             */
-/*   Updated: 2021/09/12 16:17:52 by aileen           ###   ########.fr       */
+/*   Updated: 2021/09/12 16:45:02 by aileen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_putstr(char *str, t_data *data)
 	if (!str)
 		ft_putstr("(null)", data);
 	i = 0;
-	while (str[i])
+	while (str && str[i])
 	{
 		ft_putchar(str[i], data);
 		i++;
