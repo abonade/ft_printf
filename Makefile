@@ -1,37 +1,28 @@
-SRCS		=	srcs/printf_put.c\
-				srcs/printf_utils.c\
-				srcs/printf.c
+SRCS = srcs/ft_printf.c srcs/ft_printf_put.c srcs/ft_printf_utils.c
 
-OBJS		=	$(SRCS:.c=.o)
+OBJS = ${SRCS: .c=.o}
 
-CC			=	@clang
-RM			=	@rm -f
-NAME		=	libftprintf.a
+NAME = libftprintf.a
 
-FLAGS		=	-Wall -Werror -Wextra -Iincludes
+CC = gcc
+RM = rm -f
 
-.c.o:
-				$(CC) $(FLAGS) -c $< -o $(<:.c=.o)
+CFLAGS = -Wall -Wextra -Werror
 
-$(NAME):		start_message $(OBJS)
-				@ar rc $(NAME) $(OBJS)
-				@ranlib $(NAME)
-				@echo "\033[1A\033[25C\033[1;32m✓\033[0m"
+.c.o :
+			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
-all:			$(NAME)
+${NAME}:	${OBJS}
+			ar rc ${NAME} ${OBJS}
+
+all:		${NAME}
 
 clean:
-				@echo "\033[0;33mCleaning \033[1;31m$(NAME)\033[0;33m's objects\033[0m"
-				$(RM) $(OBJS)
+			${RM} ${OBJS}
 
-start_message:
-				@echo "\033[0;33mMaking \033[1;31m$(NAME)\033[0;33m\t\t\033[1;30m[\033[1;31mX\033[1;30m]\033[0m"
+fclean:		clean
+			${RM} ${NAME}
 
-fclean:			
-				$(RM) $(NAME)
-				$(RM) $(OBJS)
-				@echo "\033[0;33mRemoving \033[1;31m$(NAME)\033[0;33m.\033[0m"
+re:			fclean all
 
-re:				fclean all
-
-.PHONY:			all clean fclean re
+.PHONY: all clean fclean re
