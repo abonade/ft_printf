@@ -6,11 +6,11 @@
 /*   By: aileen <aileen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 14:51:06 by aileen            #+#    #+#             */
-/*   Updated: 2021/09/16 15:17:05 by abonade-         ###   ########.fr       */
+/*   Updated: 2021/09/16 15:50:12 by abonade-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 int	ft_printf(const char *str, ...)
 {

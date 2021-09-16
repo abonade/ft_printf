@@ -6,11 +6,11 @@
 /*   By: aileen <aileen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 16:17:09 by aileen            #+#    #+#             */
-/*   Updated: 2021/09/16 15:17:39 by abonade-         ###   ########.fr       */
+/*   Updated: 2021/09/16 15:51:00 by abonade-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 void	ft_putchar(char c, t_data *data)
 {
