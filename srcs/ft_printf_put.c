@@ -32,7 +32,7 @@ void	ft_putstr(char *str, t_data *data)
 	}
 }
 
-void	ft_putnbr_base_recu(long int n, char *base, int base_len, t_data *data)
+void	ft_putnbr_base_recu(unsigned long int n, char *base, int base_len, t_data *data)
 {
 	if (n == 0)
 		return ;
@@ -49,11 +49,13 @@ void	ft_putnbr_base(long int n, char *base, t_data *data)
 		ft_putchar('-', data);
 		n = -n;
 	}
-	ft_putnbr_base_recu(n, base, ft_strlen(base), data);
+	ft_putnbr_base_recu((unsigned long int)n, base, ft_strlen(base), data);
 }
 
 void	ft_put_address(void *ptr, t_data *data)
 {
 	ft_putstr("0x", data);
-	ft_putnbr_base((long int)ptr, "0123456789abcdef", data);
+	if ((unsigned long int)ptr == 0)
+		ft_putchar('0', data);
+	ft_putnbr_base_recu((unsigned long int)ptr, "0123456789abcdef", 16, data);
 }

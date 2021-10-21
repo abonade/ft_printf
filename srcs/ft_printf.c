@@ -16,6 +16,7 @@ int	ft_printf(const char *str, ...)
 {
 	t_data	*pouet;
 	int		i;
+	int		ret;
 
 	if (ft_malloc((void **)(&pouet), sizeof(t_data)))
 		return (0);
@@ -34,5 +35,7 @@ int	ft_printf(const char *str, ...)
 		i++;
 	}
 	va_end(pouet->ag);
-	return (pouet->nbchar);
+	ret = pouet->nbchar;
+	free(pouet);
+	return (ret);
 }
