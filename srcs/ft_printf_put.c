@@ -6,7 +6,7 @@
 /*   By: aileen <aileen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 16:17:09 by aileen            #+#    #+#             */
-/*   Updated: 2021/09/16 15:51:00 by abonade-         ###   ########.fr       */
+/*   Updated: 2021/10/21 18:52:49 by abonade-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ void	ft_putstr(char *str, t_data *data)
 	}
 }
 
-void	ft_putnbr_base_recu(unsigned long int n, char *base, int base_len, t_data *data)
+void	ft_putnbr_base_recu(unsigned long int n, char *b, int b_len, t_data *dt)
 {
 	if (n == 0)
 		return ;
-	ft_putnbr_base_recu(n / base_len, base, base_len, data);
-	ft_putchar((base[n % base_len]), data);
+	ft_putnbr_base_recu(n / b_len, b, b_len, dt);
+	ft_putchar((b[n % b_len]), dt);
 }
 
 void	ft_putnbr_base(long int n, char *base, t_data *data)
